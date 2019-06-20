@@ -161,6 +161,9 @@ function getVideo(type, id) {
         })
         .then(function (output) {
             let videoFrame = '';
+            if (output.results.length === 0) {
+                videoFrame = '<p>К сожалению, видео отсутствует</p>';
+            }
             output.results.forEach(function (item) {
                 videoFrame += '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + item.key + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
             });
