@@ -70,7 +70,6 @@ function openFullInfo() {
             return value.json();
         })
         .then(function (output) {
-            console.log(output);
 
             movie.innerHTML = `
                 <h4 class="col-12 text-center text-info">${output.name || output.title}</h4> 
@@ -120,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return value.json();
         })
         .then(function (output) {
-            console.log(output.results)
             let inner = '<h4 class="col-12 text-center text-info">Популярные за неделю</h4>';
             if (output.results.length === 0) {
                 inner = '<h2 class="col-12 text-center text-danger">К сожалению, по вашему запросу ничего не найдено</h2>';
@@ -162,7 +160,6 @@ function getVideo(type, id) {
             return value.json();
         })
         .then(function (output) {
-            console.log(output.results);
             let videoFrame = '';
             output.results.forEach(function (item) {
                 videoFrame += '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + item.key + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
