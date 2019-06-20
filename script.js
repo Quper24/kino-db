@@ -69,7 +69,7 @@ function openFullInfo() {
             }
             return value.json();
         })
-        .then( function (output) {
+        .then(function (output) {
             console.log(output);
 
             movie.innerHTML = `
@@ -164,7 +164,7 @@ function getVideo(type, id) {
         .then(function (output) {
             console.log(output.results);
             let videoFrame = '';
-            output.results.forEach(function(item){
+            output.results.forEach(function (item) {
                 videoFrame += '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + item.key + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
             });
 
